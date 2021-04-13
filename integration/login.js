@@ -9,21 +9,21 @@ describe('To test Login ', () => {
     })
 
     config.sizes.forEach(function (size) {
-        it('Test 1- Login with correct username and Password for size' + size  ,() => {
+       it('Test 1- Login with correct email and Password for size' + size  ,() => {
             helper.selectViewPort(size)
             helper.login("munisha@yopmail.com", "Password@1")
             cy.get(dataLocator.loggedInUsername).contains("Munisha")
         })
 
 
-        it('Test 2 - Login with empty username and password' + size  ,() => {
+        it('Test 2 - Login with empty email and password' + size  ,() => {
             helper.selectViewPort(size)
             cy.get(dataLocator.signInLink).click();
             cy.get(dataLocator.loginButton).click();
             cy.get(dataLocator.invalidEmailOrPasswordErrorMessage).contains('email or password is invalid')
         })
 
-        it('Test 3 - Login with correct username and empty password' + size  ,() => {
+        it('Test 3 - Login with correct email and empty password' + size  ,() => {
             helper.selectViewPort(size)
             cy.get(dataLocator.signInLink).click();
             cy.get(dataLocator.email).type("munisha@yopmail.com")
@@ -31,7 +31,7 @@ describe('To test Login ', () => {
             cy.get(dataLocator.invalidEmailOrPasswordErrorMessage).contains('email or password is invalid')
         })
 
-        it('Test 4 - Login with correct username and empty password' + size  ,() => {
+        it('Test 4 - Login with correct email and empty password' + size  ,() => {
             helper.selectViewPort(size)
             cy.get(dataLocator.signInLink).click();
             cy.get(dataLocator.password).clear().type("password")
@@ -39,11 +39,22 @@ describe('To test Login ', () => {
             cy.get(dataLocator.invalidEmailOrPasswordErrorMessage).contains('email or password is invalid')
         })
 
-        it('Test 5 - Login with correct username and Password for size' + size  ,() => {
+        it('Test 5 - Login with correct email and Password for size' + size  ,() => {
             helper.selectViewPort(size)
             helper.login("munishaRandom@yopmail.com", "Password@11234")
             cy.get(dataLocator.invalidEmailOrPasswordErrorMessage).contains('email or password is invalid')
         })
 
+        it('Test 6- Login with in-correct email' + size  ,() => {
+            helper.selectViewPort(size)
+            cy.get(dataLocator.signInLink).click();
+            cy.get(dataLocator.email).type("munisha")
+            cy.get(dataLocator.loginButton).click();
+            cy.get('input:invalid')
+                .invoke('prop', 'validationMessage')
+                .should('equal', 'Please include an \'@\' in the email address. \'munisha\' is missing an \'@\'.')
+        })
+
     })
 })
+

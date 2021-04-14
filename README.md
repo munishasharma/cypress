@@ -11,7 +11,7 @@
 
 # Download Tests from GitHub, Install Cypress#
 * Open Terminal/Command prompt
-* Go to path where you want to setup Cypress tests (Eg: /Users/<user>/Documents)
+* Go to path where you want to setup Cypress tests (Eg: /Users/username/Documents)
 * git clone https://github.com/munishasharma/cypress.git
 * $ npm install (This installs Cypress and other dependencies)the root of your project to ensure cypress is installed in the correct directory.
 * $ node_modules/.bin/cypress open   (Opens Cypress Test Runner)
@@ -29,14 +29,14 @@ Command line :- cypress run --reporter mochawesome
 
 # Folder structure:-
 
-Fixtures
-	config.json (configurations like reporting configurations is available)
-	locators.json (Data Selectors will be available here)	 
-integration
-	login.js ( test cases for Login Functionality)
-	setting.js ( Test cases for setting)	
-plugins ( I don't have any plugin at the moment, but plugins will be available here)
-supports
-	commands.js 
-	constants.js (Constants will be available here)
-	helperFile.js ( common functions to reuse will be available here)
+1) fixtures
+	a) config.json:- configurations like reporting configurations is available
+	b) locators.json:-Data Selectors will be available here
+2) integration
+	a) login.jstest cases for Login Functionality)
+	b) setting.js ( Test cases for setting)	
+3) plugins ( I don't have any plugin at the moment, but plugins will be available here)
+4) supports
+	a) commands.js 
+	b) constants.js (Constants will be available here)
+	c) helperFile.js ( common functions to reuse will be available here)

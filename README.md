@@ -30,13 +30,17 @@ Command line :- cypress run --reporter mochawesome
 # Folder structure:-
 
 1) fixtures
+
 	a) config.json:- configurations like reporting configurations is available
 	b) locators.json:-Data Selectors will be available here
+	
 2) integration
 	a) login.jstest cases for Login Functionality)
 	b) setting.js ( Test cases for setting)	
+	
 3) plugins ( I don't have any plugin at the moment, but plugins will be available here)
-4) supports
+
+5) supports
 	a) commands.js 
 	b) constants.js (Constants will be available here)
 	c) helperFile.js ( common functions to reuse will be available here)

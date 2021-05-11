@@ -1,0 +1,9 @@
+{
+  "searchTextBox" : ".sb_form_q",
+  "searchIcon": "//*[@id='sb_form']/label/svg",
+  "acceptCookies": "//*[@id='zV9nZe']/div",
+  "googleAcceptCookies": "button[id='L2AGLb']",
+  "googleInputTextBox": "input[type='text']",
+  "googleSearchResult": "#rso > div:nth-child(1)"
+
+}

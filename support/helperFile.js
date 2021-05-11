@@ -1,13 +1,4 @@
-import * as dataLocator from "../fixtures/locators.json"
-import * as config from "./constants"
-
-export function login(email,password) {
-    cy.get(dataLocator.signInLink).click();
-    cy.get(dataLocator.email).clear().type(email)
-    cy.get(dataLocator.password).clear().type(password)
-    cy.get(dataLocator.loginButton).click();
-    
-}
+import * as dataLocator from "./locators.json"
 
 export function selectViewPort(size) {
     if (Cypress._.isArray(size)) {
